@@ -1,0 +1,212 @@
+#root 
+{
+  width: 100%; 
+  max-width: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.animate-down 
+{
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s ease;
+}
+
+.animate-down.show 
+{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+header
+{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-family: sans-serif;
+  z-index: 1000;
+  background-color: var(--background);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+header.menu-visible 
+{
+  transform: translateY(0);
+  opacity: 1;
+}
+header.hide-menu 
+{
+  transform: translateY(-125%);
+  opacity: 0;
+}
+nav
+{
+  background-color: var(--colorBox);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 15px 15px 0 var(--black);
+}
+label.logo
+{
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  gap: 10px;
+  padding: 0 100px;
+}
+label.logo img
+{
+  width: 80px;
+}
+nav ul
+{
+    display: flex;
+    float: right;
+    margin-right: 20px
+}
+nav ul li
+{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+.menuIcon
+{
+  color: var(--white);
+  opacity: 0.8;
+  transition: 0.5s;
+}
+nav ul li #btn-en button,
+nav ul li #btn-ru button
+{
+    background: transparent;
+    outline: none;
+    border: 0;
+    height: 32px;
+    width: 32px;
+}
+nav ul li button img
+{
+    width: 32px;
+    height: 32px;
+}
+nav ul li a
+{
+    color: var(--text);
+    font-size: 17px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+.bottomLine
+{
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  height: 2px;
+  transform: scale(0);
+  background-color: var(--white);
+  transition: 0.5s;
+  
+}
+nav a.active,nav a:hover
+{
+    opacity: 1;
+    text-shadow: 0 0px 30px var(--white);
+}
+nav a.active,nav a:hover + .menuIcon
+{
+  opacity: 1;
+}
+nav a.active,nav a:hover + .bottomLine
+{
+  transform: scale(1);
+}
+.menu_list
+{
+  position: relative;
+  display: inline-block;
+}
+.list
+{
+    display: none;
+    background-color: #333;
+    border-radius: 15px;
+    width: 180px;
+    height: auto;
+    padding: 10px;
+    align-items: flex-start;
+}
+.checkbtn
+{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+    display: none;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+.checkbtn img
+{
+    width: 30px;
+    height: 30px;
+}
+#check
+{
+    display: none;
+}
+.btn
+{
+  padding: 10px 20px;
+  background-color: var(--color);
+  color: var(--white);
+  border: 0;
+  outline: none;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.btn:hover
+{
+  opacity: 1;
+  box-shadow: 0 0 20px var(--color);
+}
+.language
+{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.language_box
+{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 5px;
+    background-color: var(--color);
+}
+.language_box .active
+{
+    padding: 3px 5px;
+    border-radius: 0px;
+    background-color: var(--darkColor);
+    transition: 0.5s;
+}
+.language_box .show
+{
+    padding: 3px 5px;
+    border-radius: 0px;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.language_box .show:hover
+{
+    background-color: var(--darkColor);
+}
