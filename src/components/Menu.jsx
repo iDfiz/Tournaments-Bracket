@@ -56,7 +56,7 @@ export default function Menu() {
         </button>
         <label className="logo">
             <img 
-                src={`${BASE}/logo.png`} 
+                src={`${BASE}logo.png`} 
                 alt="logo"
             />
             <p>Tournaments-Bracket</p>

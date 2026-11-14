@@ -63,7 +63,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className="logo">
-                    <img src={`${BASE}/logo.png`} alt="" style={{width: "300px"}}/>
+                    <img src={`${BASE}logo.png`} alt="" style={{width: "300px"}}/>
                 </div>
             </div>
         </section>
