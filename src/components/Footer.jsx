@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Логотип */}
           <ul className="logo">
             <li>
-              <Link to="/"><img src="../../public/logo.png" alt="logo" /></Link>
+              <Link to="/"><img src="/Tournaments-Bracket/logo.png" alt="logo" /></Link>
               <h2>Tournaments-Bracket</h2>
             </li>
           </ul>
