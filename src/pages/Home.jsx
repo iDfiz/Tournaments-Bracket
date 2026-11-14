@@ -18,6 +18,7 @@ import feature4 from "../assets/Easy-integration-with-ReactJSHTML.jpg";
 
 export default function Home() {
   const { i18n } = useTranslation();
+  const BASE = import.meta.env.BASE_URL;
   const english = [
     "Tournaments-Bracket",
     "Generator Library",
@@ -295,20 +296,20 @@ export default function Home() {
         <section className="about">
           <div className="first-block">
             <div className="back-img">
-              <img src="/Tournaments-Bracket/assets/logo.png" alt="" />
+              <img src={`${BASE}logo.png`} alt="" />
             </div>
             <div className="info">
               <h2>{i18n.t('about.text')}</h2>
               <div className="icons">
                   <div className="steck">
                     <div className="back-img-steck">
-                      <img src="/Tournaments-Bracket/assets/icons/react.png" alt="" />
+                      <img src={`${BASE}/icons/react.png`} alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src="/Tournaments-Bracket/assets/icons/js.png" alt="" />
+                      <img src={`${BASE}/icons/js.png`} alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src="/Tournaments-Bracket/assets/icons/ts.png" alt="" />
+                      <img src={`${BASE}/icons/ts.png`} alt="" />
                     </div>
                   </div>
                   <div className="link">

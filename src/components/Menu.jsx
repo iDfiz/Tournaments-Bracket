@@ -5,7 +5,8 @@ import LanguageSelect from './LanguageSelect';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressBook, faBook, faObjectGroup, faHouse,  } from "@fortawesome/free-solid-svg-icons"
 
-export default function Menu({ hidden }) {
+export default function Menu() {
+  const BASE = import.meta.env.BASE_URL;
 
   const { i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,11 +52,11 @@ export default function Menu({ hidden }) {
       <nav>
         <input typeof='checkbox' id="check"/>
         <button className="checkbtn" onClick={toggleMenu}>
-          <img src="/Tournaments-Bracket/assets/icons/bars-solid.png" alt="menu" />
+          <img src={`${BASE}/icons/bars-solid.png`} alt="menu" />
         </button>
         <label className="logo">
             <img 
-                src="/Tournaments-Bracket/assets/logo.png" 
+                src={`${BASE}/logo.png`} 
                 alt="logo"
             />
             <p>Tournaments-Bracket</p>

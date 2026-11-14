@@ -6,6 +6,7 @@ import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
   const { t } = useTranslation();
+  const BASE = import.meta.env.BASE_URL;
   useEffect(() => {
     const animateOnScroll = (elementSelector, className = "show", offset = 1.2) => {
       const element = document.querySelector(elementSelector);
@@ -42,7 +43,7 @@ export default function Footer() {
           {/* Логотип */}
           <ul className="logo">
             <li>
-              <Link to="/"><img src="/Tournaments-Bracket/assets/logo.png" alt="logo" /></Link>
+              <Link to="/"><img src={`${BASE}/logo.png`} alt="logo" /></Link>
               <h2>Tournaments-Bracket</h2>
             </li>
           </ul>

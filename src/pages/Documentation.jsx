@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faIdCard, faHandshake, faCircleQuestion, faClipboardList, faCodeMerge, faGear, faLink, faBorderAll, faBook, faPlay, faDownload, faHouse,  } from "@fortawesome/free-solid-svg-icons"
+import { faIdCard, faHandshake, faCircleQuestion, faCodeMerge, faGear, faBorderAll, faBook, faPlay, faDownload, faHouse,  } from "@fortawesome/free-solid-svg-icons"
 import { useTranslation } from "react-i18next";
 import { CodeBlock } from "../components/Copy";
 import RadioGroup from "../components/RadioGroup";

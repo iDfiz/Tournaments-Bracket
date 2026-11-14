@@ -8,12 +8,12 @@ export const rounds: Round[] = [
         {
           "id": 1,
           "name": "Team A",
-          "logo": "../public/logo.png"
+          "logo": "/Tournaments-Bracket/logo.png"
         },
         {
           "id": 2,
           "name": "Team B",
-          "logo": "../public/logo.png"
+          "logo": "/Tournaments-Bracket/logo.png"
         }
       ],
       "winnerId": 0
@@ -24,12 +24,12 @@ export const rounds: Round[] = [
         {
           "id": 3,
           "name": "Team C",
-          "logo": "../public/logo.png"
+          "logo": "/Tournaments-Bracket/logo.png"
         },
         {
           "id": 4,
           "name": "Team D",
-          "logo": "../public/logo.png"
+          "logo": "/Tournaments-Bracket/logo.png"
         }
       ],
       "winnerId": 3
@@ -42,12 +42,12 @@ export const rounds: Round[] = [
         {
           "id": 2,
           "name": "Team B",
-          "logo": "../public/logo.png"
+          "logo": "/Tournaments-Bracket/logo.png"
         },
         {
           "id": 3,
           "name": "Team C",
-          "logo": "../public/logo.png"
+          "logo": "/Tournaments-Bracket/logo.png"
         },
       ],
       "winnerId": 3

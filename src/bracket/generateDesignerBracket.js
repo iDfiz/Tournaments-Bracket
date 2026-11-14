@@ -1,4 +1,5 @@
 export function generateDesignerBracket(count) {
+    const BASE = import.meta.env.BASE_URL;
     const participantsCount = Math.max(2, Math.min(99, Number(count)));
 
     // Ближайшая степень двойки
@@ -18,7 +19,7 @@ export function generateDesignerBracket(count) {
                     ? {
                         id: i + 1,
                         name: `Участник ${i + 1}`,
-                        logo: "/logo.png"
+                        logo: `${BASE}/logo.png`
                     }
                     : null,
 
@@ -26,7 +27,7 @@ export function generateDesignerBracket(count) {
                     ? {
                         id: i + 2,
                         name: `Участник ${i + 2}`,
-                        logo: "/logo.png"
+                        logo: `${BASE}/logo.png`
                     }
                     : null
             ],

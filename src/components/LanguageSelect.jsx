@@ -3,36 +3,37 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
 
+const BASE = import.meta.env.BASE_URL;
 const languages = [
   {
     code: "ru",
     label: "RU",
-    icon: "/Tournaments-Bracket/assets/icons/russian.png",
+    icon: `${BASE}/icons/russian.png`,
   },
   {
     code: "en",
     label: "EN",
-    icon: "/Tournaments-Bracket/assets/icons/usa.png",
+    icon: `${BASE}/icons/usa.png`,
   },
   {
     code: "zh",
     label: "ZH",
-    icon: "/Tournaments-Bracket/assets/icons/china.png",
+    icon: `${BASE}/icons/china.png`,
   },
   {
     code: "fr",
     label: "FR",
-    icon: "/Tournaments-Bracket/assets/icons/france.png",
+    icon: `${BASE}/icons/france.png`,
   },
   {
     code: "de",
     label: "DE",
-    icon: "/Tournaments-Bracket/assets/icons/germany.png",
+    icon: `${BASE}/icons/germany.png`,
   },
   {
     code: "it",
     label: "IT",
-    icon: "/Tournaments-Bracket/assets/icons/italy.png",
+    icon: `${BASE}/icons/italy.png`,
   },
 ];
 

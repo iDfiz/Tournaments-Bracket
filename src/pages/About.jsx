@@ -10,6 +10,7 @@ import '../App.css';
 import '../components/css/about.css';
 
 export default function About() {
+    const BASE = import.meta.env.BASE_URL;
     const { i18n } = useTranslation();
 
   return (
@@ -62,7 +63,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className="logo">
-                    <img src="/Tournaments-Bracket/assets/logo.png" alt="" style={{width: "300px"}}/>
+                    <img src={`${BASE}/logo.png`} alt="" style={{width: "300px"}}/>
                 </div>
             </div>
         </section>
