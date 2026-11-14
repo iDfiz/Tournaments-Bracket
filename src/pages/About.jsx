@@ -62,7 +62,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className="logo">
-                    <img src="/Tournaments-Bracket/logo.png" alt="" style={{width: "300px"}}/>
+                    <img src="/Tournaments-Bracket/assets/logo.png" alt="" style={{width: "300px"}}/>
                 </div>
             </div>
         </section>
