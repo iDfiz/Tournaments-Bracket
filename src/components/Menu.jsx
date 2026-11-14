@@ -51,11 +51,11 @@ export default function Menu({ hidden }) {
       <nav>
         <input typeof='checkbox' id="check"/>
         <button className="checkbtn" onClick={toggleMenu}>
-          <img src="/Tournaments-Bracket/icons/bars-solid.png" alt="menu" />
+          <img src="/Tournaments-Bracket/assets/icons/bars-solid.png" alt="menu" />
         </button>
         <label className="logo">
             <img 
-                src="/Tournaments-Bracket/logo.png" 
+                src="/Tournaments-Bracket/assets/logo.png" 
                 alt="logo"
             />
             <p>Tournaments-Bracket</p>

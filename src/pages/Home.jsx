@@ -295,20 +295,20 @@ export default function Home() {
         <section className="about">
           <div className="first-block">
             <div className="back-img">
-              <img src="/Tournaments-Bracket/logo.png" alt="" />
+              <img src="/Tournaments-Bracket/assets/logo.png" alt="" />
             </div>
             <div className="info">
               <h2>{i18n.t('about.text')}</h2>
               <div className="icons">
                   <div className="steck">
                     <div className="back-img-steck">
-                      <img src="/Tournaments-Bracket/icons/react.png" alt="" />
+                      <img src="/Tournaments-Bracket/assets/icons/react.png" alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src="/Tournaments-Bracket/icons/js.png" alt="" />
+                      <img src="/Tournaments-Bracket/assets/icons/js.png" alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src="/Tournaments-Bracket/icons/ts.png" alt="" />
+                      <img src="/Tournaments-Bracket/assets/icons/ts.png" alt="" />
                     </div>
                   </div>
                   <div className="link">

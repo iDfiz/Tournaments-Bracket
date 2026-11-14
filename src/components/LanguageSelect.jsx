@@ -7,32 +7,32 @@ const languages = [
   {
     code: "ru",
     label: "RU",
-    icon: "/Tournaments-Bracket/icons/russian.png",
+    icon: "/Tournaments-Bracket/assets/icons/russian.png",
   },
   {
     code: "en",
     label: "EN",
-    icon: "/Tournaments-Bracket/icons/usa.png",
+    icon: "/Tournaments-Bracket/assets/icons/usa.png",
   },
   {
     code: "zh",
     label: "ZH",
-    icon: "/Tournaments-Bracket/icons/china.png",
+    icon: "/Tournaments-Bracket/assets/icons/china.png",
   },
   {
     code: "fr",
     label: "FR",
-    icon: "/Tournaments-Bracket/icons/france.png",
+    icon: "/Tournaments-Bracket/assets/icons/france.png",
   },
   {
     code: "de",
     label: "DE",
-    icon: "/Tournaments-Bracket/icons/germany.png",
+    icon: "/Tournaments-Bracket/assets/icons/germany.png",
   },
   {
     code: "it",
     label: "IT",
-    icon: "/Tournaments-Bracket/icons/italy.png",
+    icon: "/Tournaments-Bracket/assets/icons/italy.png",
   },
 ];
 
