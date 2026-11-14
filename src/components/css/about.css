@@ -1,0 +1,211 @@
+.about-page
+{
+    padding: 170px 100px 40px 100px;
+    text-align: left;
+    color: var(--white);
+}
+.about-page h1
+{
+    font-size: 80px;
+}
+.about-page h3
+{
+    font-size: 30px;
+    opacity: 0.8;
+}
+.chapter, .about-me
+{
+    padding: 100px;
+}
+.about-me h3
+{
+    color: var(--white);
+    margin: 10px 0;
+    font-size: 20px;
+}
+.block
+{
+  position: relative;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color);
+  padding: 35px 35px;
+  border: 2px solid var(--color);
+  background-color: var(--box);
+}
+.block h1
+{
+    font-size: 50px;
+}
+.separation
+{
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    margin-top: 10px;
+}
+.separation ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 25px;
+}
+
+.separation ul li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 35px;
+}
+
+.separation ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 23px;
+  height: 23px;
+  background: url("/icons/check.png") no-repeat center / contain;
+}
+.separation .right
+{
+    position: relative;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    background-color: var(--color);
+    padding: 5px 10px;
+}
+.separation .right::after
+{
+    position: absolute;
+  content: '';
+  bottom: -30px;
+  right: -18px;
+  width: 40px;
+  height: 60px;
+  transform: rotate(45deg);
+  background-color: var(--box);
+}
+.cards
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.cards .card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    padding: 20px;
+    border: 2px solid var(--color);
+}
+.cards .card .icon
+{
+    position: relative;
+    display: flex;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 30px;
+    border: 2px solid var(--lightColor);
+    margin-bottom: 10px;
+}
+.cards .card .icon::before
+{
+    position: absolute;
+    content: '';
+    bottom: -11.2px;
+    right: -12.2px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: var(--box);
+    border-left: 2px solid var(--lightColor);
+}
+.cards .card h1
+{
+    font-size: 25px;
+    color: var(--white);
+}
+.cards .card p
+{
+    font-size: 20px;
+    color: var(--white);
+}
+.info h3
+{
+    font-size: 30px;
+    color: var(--white);
+}
+.info .link
+{
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+@media (max-width: 480px)
+{
+    .about-page
+    {
+        padding: 100px 20px 20px 20px;
+    }
+    .about-page h1,
+    .block h1
+    {
+        font-size: 25px;
+    }
+    .about-page h3
+    {
+        font-size: 15px;
+    }
+    .chapter, .about-me
+    {
+        padding: 20px;
+    }
+    .separation
+    {
+        flex-direction: column;
+    }
+    .separation ul li
+    {
+        font-size: 15px;
+    }
+    .separation .right
+    {
+        font-size: 15px;
+    }
+    .cards
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .cards .card
+    {
+        width: auto;
+    }
+    .cards .card p
+    {
+        font-size: 15px;
+    }
+    .info h3
+    {
+        font-size: 15px;
+    }
+    .info .link
+    {
+        gap: 10px;
+    }
+    .block .logo
+    {
+        display: none;
+    }
+}

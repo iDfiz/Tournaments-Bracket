@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Prism from "prismjs";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-jsx";
+import "prismjs/themes/prism-okaidia.css";
 
-export function CodeBlock({ code, title }) {
+export function CodeBlock({ code, title, language = "javascript" }) {
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [code]);
 
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(code);
@@ -11,17 +19,20 @@ export function CodeBlock({ code, title }) {
 
   return (
     <div className="code-block">
-        <div className="copy-top">
-            <p>{title}</p>
+      <div className="copy-top">
+        <p>{title}</p>
+        <button className="copy-btn" onClick={copyToClipboard}>
+          {copied ? "Copied!" : "Copy"}
+        </button>
+      </div>
 
-            <button className="copy-btn" onClick={copyToClipboard}>
-                {copied ? "Copied!" : "Copy"}
-            </button>
-        </div>
-        <div className="copy-line"></div>
-        <pre>
-            <code>{code}</code>
-        </pre>
+      <div className="copy-line" />
+
+      <pre className={`language-${language}`}>
+        <code className={`language-${language}`}>
+          {code}
+        </code>
+      </pre>
     </div>
   );
 }

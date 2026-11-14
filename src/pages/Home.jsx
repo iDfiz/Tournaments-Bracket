@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faDownload, faFileImport, faGears } from '@fortawesome/free-solid-svg-icons'
 import {TournamentBracket} from "tournaments-bracket";
 import "tournaments-bracket/dist/tournaments-bracket.css";
 import { rounds } from "../bracket/rounds";
+import { useTranslation } from "react-i18next";
 import { CodeBlock } from "../components/Copy";
+import RadioGroup from "../components/RadioGroup";
 import '../index.css';
 import '../App.css';
 import '../components/css/home.css';
@@ -13,9 +15,9 @@ import feature1 from "../assets/Fast-grid-generation.jpg";
 import feature2 from "../assets/Customizable-match-design.jpg";
 import feature3 from "../assets/Support-for-different-tournament-formats.jpg";
 import feature4 from "../assets/Easy-integration-with-ReactJSHTML.jpg";
-import code from "../assets/code.png";
 
 export default function Home() {
+  const { i18n } = useTranslation();
   const english = [
     "Tournaments-Bracket",
     "Generator Library",
@@ -70,22 +72,113 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
-  const [type, setType] = useState("Ошибка");
+  const [type, setType] = useState(i18n.t('feedback.error'));
   const [open, setOpen] = useState(false);
-
-  const types = ["Ошибка", "Пожелание", "Вопрос", "Другое"];
+  const types = [i18n.t("feedback.error"), i18n.t('feedback.wish'), i18n.t('feedback.question'), i18n.t('feedback.other')];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("https://hook.eu1.make.com/xcxx8fvmr1x5ocj1mb7wv35f018lythq", {
+    try {
+      await fetch("https://hook.eu1.make.com/g3jmeothe92x7b7qo690zw6afffnihpx", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          type
+        })
+      });
+
+      setSent(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+      setType("Ошибка");
+    } catch (err) {
+      console.error("Ошибка отправки:", err);
+    }
+  };
+
+  const questions = [
+    {
+      id: "source",
+      text: i18n.t('survey.question1'),
+      options: [
+        "TicTok",
+        i18n.t('survey.question1Variant2'),
+        "YouTube",
+        i18n.t('survey.question1Variant4'),
+      ]
+    },
+    {
+      id: "role",
+      text: i18n.t('survey.question2'),
+      options: [
+        i18n.t('survey.question2Variant1'),
+        i18n.t('survey.question2Variant2'),
+        i18n.t('survey.question2Variant3'),
+        i18n.t('survey.question2Variant4'),
+      ]
+    },
+    {
+      id: "usage",
+      text: i18n.t('survey.question3'),
+      options: [
+        i18n.t('survey.question3Variant1'),
+        i18n.t('survey.question3Variant2'),
+        i18n.t('survey.question3Variant3'),
+        i18n.t('survey.question3Variant4')
+      ]
+    },
+    {
+      id: "missing",
+      text: i18n.t('survey.question4'),
+      options: [
+        i18n.t('survey.question4Variant1'),
+        i18n.t('survey.question4Variant2'),
+        i18n.t('survey.question4Variant3'),
+        i18n.t('survey.question4Variant4')
+      ]
+    },
+    {
+      id: "rating",
+      text: i18n.t('survey.question5'),
+      options: ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"]
+    }
+  ];
+
+  const [currentStep, setCurrentStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [completed, setCompleted] = useState(false);
+
+  const selectAnswer = (questionId, option) => {
+    setAnswers(prev => ({
+      ...prev,
+      [questionId]: option
+    }));
+  };
+
+  const nextQuestion = () => {
+    if (currentStep < questions.length - 1) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      submitPoll();
+    }
+  };
+
+  const submitPoll = async () => {
+    await fetch("https://hook.eu1.make.com/5x4duyx9dgwuddla9lxvi0h4adqdohbp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, type, message }),
+      body: JSON.stringify({
+        answers,
+        date: new Date().toISOString(),
+      })
     });
-
-    setSent(true);
-    setName(""); setEmail(""); setMessage("");
+    localStorage.setItem("poll_completed", "true");
+    setCompleted(true);
   };
 
   return (
@@ -98,7 +191,7 @@ export default function Home() {
 
         <div className="heading">
           <div className="left-line"></div>
-          <h1>Преимущества</h1>
+          <h1>{i18n.t('features.title')}</h1>
           <div className="right-line"></div>
         </div>
       
@@ -109,8 +202,8 @@ export default function Home() {
                     <img src={feature1} alt="" />
                 </div>
                 <div className="text">
-                    <h3>Быстрая генерация сеток</h3>
-                    <p>Создавайте турнирные сетки за считанные секунды с помощью оптимизированных алгоритмов.</p>
+                    <h3>{i18n.t('features.titleCard1')}</h3>
+                    <p>{i18n.t('features.textCard1')}</p>
                 </div>
             </div>
           </div>
@@ -119,8 +212,8 @@ export default function Home() {
                     <img src={feature2} alt="" />
                 </div>
                 <div className="text">
-                    <h3>Настраиваемый дизайн матчей</h3>
-                    <p>Полный контроль над внешним видом матчей: стили, цвета и структура под ваш проект.</p>
+                    <h3>{i18n.t('features.titleCard2')}</h3>
+                    <p>{i18n.t('features.textCard2')}</p>
                 </div>
             </div>
             <div className="card">
@@ -128,8 +221,8 @@ export default function Home() {
                     <img src={feature3} alt="" />
                 </div>
                 <div className="text">
-                    <h3>Поддержка разных форматов</h3>
-                    <p>Работа с популярными форматами турниров и гибкая адаптация под любые правила.</p>
+                    <h3>{i18n.t('features.titleCard3')}</h3>
+                    <p>{i18n.t('features.textCard3')}</p>
                 </div>
             </div>
             <div className="card">
@@ -137,66 +230,56 @@ export default function Home() {
                     <img src={feature4} alt="" />
                 </div>
                 <div className="text">
-                    <h3>Лёгкая интеграция</h3>
-                    <p>Простое подключение и использование в современных фронтенд-проектах.</p>
+                    <h3>{i18n.t('features.titleCard4')}</h3>
+                    <p>{i18n.t('features.textCard4')}</p>
                 </div>
             </div>
         </section>
 
         <div className="heading">
           <div className="left-line"></div>
-          <h1>Как использовать</h1>
+          <h1>{i18n.t('quick-start.title')}</h1>
           <div className="right-line"></div>
         </div>
 
         <section className="quick-start">
-          <div className="text">
-            <h2>Шаги использования:</h2>
-            <ul>
-              <li>
-                <h3>Установка</h3>
-                <CodeBlock
-                  title={`bash`}
-                  code={`npm i tournaments-bracket@latest`}
-                />
-              </li>
-              <li>
-                <h3>Импорт</h3>
-                <CodeBlock 
-                  title={`bash`}
-                code={`import {TournamentBracket} from "tournaments-bracket";
-import "tournaments-bracket/dist/tournaments-bracket.css";
-import { rounds } from "./bracket/rounds";`}
-                />
-              </li>
-              <li>
-                <h3>Генерация сетки</h3>
-                <CodeBlock
-                  title={`bash`}
-                  code={`npx tournaments-bracket-generate`}
-                />
-                </li>
-            </ul>
-            <Link to="/documentation" className="btn" style={{marginTop: "20px"}}>Смотреть полную документацию</Link>
+          <div className="quick-start-card" style={{ background: "var(--color)" }}>
+            <div className="icon"><FontAwesomeIcon icon={faDownload} /></div>
+            <h2>{i18n.t('quick-start.titleCard1')}</h2>
+            <p>
+              {i18n.t('quick-start.textCard1')}
+            </p>
+            <Link to="/documentation#Download" className="btn">{i18n.t('quick-start.btn')}</Link>
           </div>
-          <img src={code} alt="" />
+
+          <div className="quick-start-card">
+            <div className="icon"><FontAwesomeIcon icon={faFileImport} /></div>
+            <h2>{i18n.t('quick-start.titleCard2')}</h2>
+            <p>
+              {i18n.t('quick-start.textCard1')}
+            </p>
+            <Link to="/documentation#Import" className="btn">{i18n.t('quick-start.btn')}</Link>
+          </div>
+
+          <div className="quick-start-card">
+            <div className="icon"><FontAwesomeIcon icon={faGears} /></div>
+            <h2>{i18n.t('quick-start.titleCard3')}</h2>
+            <p>
+              {i18n.t('quick-start.textCard1')}
+            </p>
+            <Link to="/documentation#Generate" className="btn">{i18n.t('quick-start.btn')}</Link>
+          </div>
         </section>
 
         <div className="heading">
           <div className="left-line"></div>
-          <h1>Примеры</h1>
+          <h1>{i18n.t('examples.title')}</h1>
           <div className="right-line"></div>
         </div>
 
         <section className="examples">
           <div className="examples-bracket">
-            <h1>Стандартная</h1>
-            <TournamentBracket
-              rounds={rounds}
-            />
-          </div>
-          <div className="examples-bracket">
-            <h1>Отцентрированная</h1>
+            <h1>{i18n.t('examples.card1')}</h1>
             <TournamentBracket
               rounds={rounds}
             />
@@ -205,7 +288,7 @@ import { rounds } from "./bracket/rounds";`}
 
         <div className="heading">
           <div className="left-line"></div>
-          <h1>О проекте</h1>
+          <h1>{i18n.t('about.title')}</h1>
           <div className="right-line"></div>
         </div>
 
@@ -215,7 +298,7 @@ import { rounds } from "./bracket/rounds";`}
               <img src="../../public/logo.png" alt="" />
             </div>
             <div className="info">
-              <h2>Я создал эту библиотеку, потому что искал готовые решения для генерации турнирных сеток и не смог найти ничего удобного для разработчиков. Тогда я подумал: «Почему бы не сделать самому?» Сейчас это проект, который я развиваю, исправляю ошибки и улучшаю по мере того, как пользователи дают обратную связь. Цель — сделать библиотеку простой, удобной и полезной для всех, кто хочет быстро создавать турниры.</h2>
+              <h2>{i18n.t('about.text')}</h2>
               <div className="icons">
                   <div className="steck">
                     <div className="back-img-steck">
@@ -229,24 +312,25 @@ import { rounds } from "./bracket/rounds";`}
                     </div>
                   </div>
                   <div className="link">
-                    <a href="https://yoomoney.ru/to/4100119449126215" className="gratitude" target="_blank" rel="noopener noreferrer">Поблагодарить автора</a>
+                    <a href="https://yoomoney.ru/to/4100119449126215" className="gratitude" target="_blank" rel="noopener noreferrer">{i18n.t('about.donate')}</a>
                   </div>
               </div>
             </div>
           </div>
         </section>
 
-        <div className="heading">
+        {/* <div className="heading">
           <div className="left-line"></div>
-          <h1>Обратная связь</h1>
+          <h1>{i18n.t('feedback.title')}</h1>
           <div className="right-line"></div>
         </div>
 
         <section style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "30px"}}>
           <div style={{minWidth: "700px"}}>
+            <h2 style={{fontSize: "40px", color: "var(--white)", textAlign: "left"}}>{i18n.t('feedback.formTitle')}</h2>
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              <input placeholder="Имя" value={name} onChange={e => setName(e.target.value)} required />
-              <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
+              <input placeholder={i18n.t('feedback.name')} value={name} onChange={e => setName(e.target.value)} required />
+              <input type="email" placeholder={i18n.t('feedback.email')} value={email} onChange={e => setEmail(e.target.value)} required />
               <div className="dropdown">
               <div
                 className="dropdown__selected"
@@ -273,21 +357,42 @@ import { rounds } from "./bracket/rounds";`}
                 </div>
               )}
             </div>
-              <textarea placeholder="Сообщение" value={message} onChange={e => setMessage(e.target.value)} required />
-              <button type="submit" className="btn" style={{fontSize: "25px"}}>Отправить</button>
+              <textarea placeholder={i18n.t('feedback.message')} value={message} onChange={e => setMessage(e.target.value)} required />
+              <button type="submit" className="btn" style={{fontSize: "25px"}}>{i18n.t('feedback.send')}</button>
               {sent && <p>Сообщение отправлено!</p>}
             </form>
           </div>
           <div>
-            <div className="feedback-info">
-              <h1>Сообщение отправляется через Telegram-бота.<br/>
-                  Вам нужно всего лишь заполнить форму и отправить её.<br/>
-                  Ответ придёт на электронную почту, которую вы укажете.<br/>
-                  Я постараюсь ответить как можно быстрее.
-              </h1>
+            <h2 style={{fontSize: "40px", color: "var(--white)", textAlign: "left"}}>{i18n.t('survey.title')}</h2>
+            <div className="poll">
+              
+              {completed ? (
+                <h2>Спасибо за участие 🙌</h2>
+              ) : (
+                <>
+                  <div key={questions[currentStep].id} className="poll-question">
+                    <p>{questions[currentStep].text}</p>
+                    <RadioGroup
+                      name={questions[currentStep].id}
+                      options={questions[currentStep].options}
+                      value={answers[questions[currentStep].id] || ""}
+                      onChange={(value) => selectAnswer(questions[currentStep].id, value)}
+                    />
+                  </div>
+
+                  <button
+                    className="btn"
+                    style={{fontSize: "20px"}}
+                    disabled={!answers[questions[currentStep].id]}
+                    onClick={nextQuestion}
+                  >
+                    {currentStep < questions.length - 1 ? i18n.t('survey.next') : i18n.t('survey.send')}
+                  </button>
+                </>
+              )}
             </div>
           </div>
-        </section>
+        </section> */}
     </>
   );
 }

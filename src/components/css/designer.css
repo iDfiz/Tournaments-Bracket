@@ -1,0 +1,348 @@
+.edit-panel
+{
+    position: relative;
+    padding: 100px 0;
+    width: 100%;
+    height: 101vh;
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--box);
+    background-image: radial-gradient(circle, var(--darkColor) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--white);
+}
+.top-panel
+{
+    position: absolute;
+    top: 100px;
+    left: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    user-select: none;
+    z-index: 999;
+}
+.top-panel ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.top-panel ul li
+{
+    padding: 10px;
+    background-color: var(--background);
+    font-size: 20px;
+}
+.left-panel
+{
+    background-color: var(--background);
+    margin: 0 20px;
+    padding: 10px;
+    user-select: none;
+    z-index: 999;
+}
+.left-panel ul
+{
+    max-height: 85vh;
+    padding: 20px;
+    background-color: var(--background);
+    min-width: 400px;
+    max-width: 500px;
+    text-align: left;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.left-panel .header
+{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.left-panel .header h1
+{
+    font-size: 30px;
+    text-wrap: nowrap;
+}
+.left-panel .header .line
+{
+    width: 100%;
+    height: 4px;
+    background-color: var(--color);
+}
+.tournaments-bracket
+{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.bottom-block-btns
+{
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.generate
+{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color);
+  padding: 10px 20px;
+  color: var(--white);
+  outline: none;
+  border: 0;
+  transition: 0.3s;
+  font-size: 18px;
+}
+.generate:hover
+{
+    box-shadow: 0 0 20px var(--color);
+}
+input[type="color"]
+{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 11px;
+    margin-top: 5px;
+    background-color: transparent;
+}
+input[type="text"]
+{
+    width: 200px;
+    height: 50px;
+    border: 2px solid var(--darkColor);
+    background-color: transparent;
+    color: var(--white);
+    font-size: 20px;
+    padding: 0 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+input[type="number"]
+{
+    background-color: var(--color);
+    outline: none;
+    border: 0;
+    color: var(--white);
+    padding: 5px 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"]::placeholder
+{
+    color: var(--white);
+}
+
+.PB-range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background: var(--darkColor);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.PB-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--color);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(10, 42, 85, 0.47);
+  transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.PB-range-slider-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid var(--darkColor);
+}
+
+.PB-range-slidervalue {
+  font-weight: 600;
+}
+
+.dropdown__selected
+{
+    background-color: transparent;
+    padding: 2px;
+}
+.dropdown__list
+{
+    width: 230px;
+    top: 130%;
+    left: -10px;
+}
+.dropdown__item
+{
+    padding: 5px 10px;
+}
+.dropdown__item:hover
+{
+    background-color: var(--darkColor);
+    font-size: 20px;
+}
+.context-menu {
+  position: fixed;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 9999;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.context-menu button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.context-menu button:hover {
+  background: #1e293b;
+}
+
+.radio-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 5px 0 15px 0;
+}
+
+.radio-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-button__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-button__label {
+  display: inline-block;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.radio-button__custom {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+  transform: translateY(-50%) scale(0.9);
+  border: 5px solid #4c8bf5;
+  color: #4c8bf5;
+}
+
+.radio-button__input:checked + .radio-button__label {
+  color: #4c8bf5;
+}
+
+.radio-button__label:hover .radio-button__custom {
+  transform: translateY(-50%) scale(1.2);
+  border-color: #4c8bf5;
+  box-shadow: 0 0 10px #4c8bf580;
+}
+.bracket-viewport
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  background: #0f172a;
+  z-index: 2;
+}
+
+.bracket-viewport:active
+{
+  cursor: grabbing;
+}
+
+.bracket-canvas
+{
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+.bracket-fullscreen
+{
+  position: fixed;
+  top: 50%;
+  left: 35%;
+  inset: 0;
+  z-index: 9999;
+  background: transparent;
+  cursor: grab;
+}
+.bracket-fullscreen:active
+{
+  cursor: grabbing;
+}
+@media (max-width: 480px)
+{
+  .edit-panel
+  {
+    display: none;
+  }
+}

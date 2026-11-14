@@ -1,0 +1,21 @@
+const INITIAL_CONFIG = {
+    fontSize: 16,
+    fontColor: "#ffffff",
+    borderWidth: 1,
+    lineWidth: 2,
+    borderType: "solid",
+    borderColor: "#334155",
+    borderWin: "#2ecc71",
+    bgWin: "#0f172a",
+    opacityWin: "1",
+    borderLos: "#e74c3c",
+    bgLos: "#0f172a",
+    opacityLos: "0.7",
+    bgTeam: "#0f172a",
+    teamWidth: 260,
+    gapRounds: 20,
+    padding: 10,
+    lineColor: "#38bdf8",
+    format: "left",
+    participants: 8
+};
