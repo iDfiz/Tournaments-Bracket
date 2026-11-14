@@ -8,6 +8,7 @@ import RadioGroup from "../components/RadioGroup";
 import '../index.css';
 import '../App.css';
 import '../components/css/about.css';
+import logo from "../assets/logo.png";
 
 export default function About() {
     const BASE = import.meta.env.BASE_URL;
@@ -63,7 +64,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className="logo">
-                    <img src={`${BASE}logo.png`} alt="" style={{width: "300px"}}/>
+                    <img src={logo} alt="" style={{width: "300px"}}/>
                 </div>
             </div>
         </section>

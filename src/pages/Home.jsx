@@ -11,6 +11,10 @@ import RadioGroup from "../components/RadioGroup";
 import '../index.css';
 import '../App.css';
 import '../components/css/home.css';
+import logo from "../assets/logo.png";
+import react from "../assets/icons/react.png";
+import js from "../assets/icons/js.png";
+import ts from "../assets/icons/ts.png";
 import feature1 from "../assets/Fast-grid-generation.jpg";
 import feature2 from "../assets/Customizable-match-design.jpg";
 import feature3 from "../assets/Support-for-different-tournament-formats.jpg";
@@ -296,20 +300,20 @@ export default function Home() {
         <section className="about">
           <div className="first-block">
             <div className="back-img">
-              <img src={`${BASE}logo.png`} alt="" />
+              <img src={logo} alt="" />
             </div>
             <div className="info">
               <h2>{i18n.t('about.text')}</h2>
               <div className="icons">
                   <div className="steck">
                     <div className="back-img-steck">
-                      <img src={`${BASE}icons/react.png`} alt="" />
+                      <img src={react} alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src={`${BASE}icons/js.png`} alt="" />
+                      <img src={js} alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src={`${BASE}icons/ts.png`} alt="" />
+                      <img src={ts} alt="" />
                     </div>
                   </div>
                   <div className="link">

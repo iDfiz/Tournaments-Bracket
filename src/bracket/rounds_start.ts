@@ -1,5 +1,7 @@
 import type { Round } from "tournaments-bracket";
 
+import logo from '../assets/logo.png';
+
 export const rounds: Round[] = [
   [
     {
@@ -8,12 +10,12 @@ export const rounds: Round[] = [
         {
           "id": 1,
           "name": "Team A",
-          "logo": "/Tournaments-Bracket/logo.png"
+          "logo": `${logo}`
         },
         {
           "id": 2,
           "name": "Team B",
-          "logo": "/Tournaments-Bracket/logo.png"
+          "logo": `${logo}`
         }
       ],
       "winnerId": 0
@@ -24,12 +26,12 @@ export const rounds: Round[] = [
         {
           "id": 3,
           "name": "Team C",
-          "logo": "/Tournaments-Bracket/logo.png"
+          "logo": `${logo}`
         },
         {
           "id": 4,
           "name": "Team D",
-          "logo": "/Tournaments-Bracket/logo.png"
+          "logo": `${logo}`
         }
       ],
       "winnerId": 0
@@ -42,12 +44,12 @@ export const rounds: Round[] = [
         {
           "id": 2,
           "name": "Team B",
-          "logo": "/Tournaments-Bracket/logo.png"
+          "logo": `${logo}`
         },
         {
           "id": 3,
           "name": "Team C",
-          "logo": "/Tournaments-Bracket/logo.png"
+          "logo": `${logo}`
         },
       ],
       "winnerId": 0

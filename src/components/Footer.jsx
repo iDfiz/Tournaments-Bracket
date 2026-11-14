@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ export default function Footer() {
           {/* Логотип */}
           <ul className="logo">
             <li>
-              <Link to="/"><img src={`${BASE}logo.png`} alt="logo" /></Link>
+              <Link to="/"><img src={logo} alt="logo" /></Link>
               <h2>Tournaments-Bracket</h2>
             </li>
           </ul>

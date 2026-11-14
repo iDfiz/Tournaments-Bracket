@@ -3,37 +3,43 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
 
-const BASE = import.meta.env.BASE_URL;
+import ru from '../assets/icons/russian.png';
+import en from '../assets/icons/usa.png';
+import zh from '../assets/icons/china.png';
+import fr from '../assets/icons/france.png'
+import de from '../assets/icons/germany.png';
+import it from '../assets/icons/italy.png';
+
 const languages = [
   {
     code: "ru",
     label: "RU",
-    icon: `${BASE}icons/russian.png`,
+    icon: `${ru}`,
   },
   {
     code: "en",
     label: "EN",
-    icon: `${BASE}icons/usa.png`,
+    icon: `${en}`,
   },
   {
     code: "zh",
     label: "ZH",
-    icon: `${BASE}icons/china.png`,
+    icon: `${zh}`,
   },
   {
     code: "fr",
     label: "FR",
-    icon: `${BASE}icons/france.png`,
+    icon: `${fr}`,
   },
   {
     code: "de",
     label: "DE",
-    icon: `${BASE}icons/germany.png`,
+    icon: `${de}`,
   },
   {
     code: "it",
     label: "IT",
-    icon: `${BASE}icons/italy.png`,
+    icon: `${it}`,
   },
 ];
 

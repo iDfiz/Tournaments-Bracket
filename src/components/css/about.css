@@ -66,7 +66,7 @@
   top: 6px;
   width: 23px;
   height: 23px;
-  background: url("/icons/check.png") no-repeat center / contain;
+  background: url("../../assets/icons/check.png") no-repeat center / contain;
 }
 .separation .right
 {
