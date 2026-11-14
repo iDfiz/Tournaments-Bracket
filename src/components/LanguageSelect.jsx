@@ -8,32 +8,32 @@ const languages = [
   {
     code: "ru",
     label: "RU",
-    icon: `${BASE}/icons/russian.png`,
+    icon: `${BASE}icons/russian.png`,
   },
   {
     code: "en",
     label: "EN",
-    icon: `${BASE}/icons/usa.png`,
+    icon: `${BASE}icons/usa.png`,
   },
   {
     code: "zh",
     label: "ZH",
-    icon: `${BASE}/icons/china.png`,
+    icon: `${BASE}icons/china.png`,
   },
   {
     code: "fr",
     label: "FR",
-    icon: `${BASE}/icons/france.png`,
+    icon: `${BASE}icons/france.png`,
   },
   {
     code: "de",
     label: "DE",
-    icon: `${BASE}/icons/germany.png`,
+    icon: `${BASE}icons/germany.png`,
   },
   {
     code: "it",
     label: "IT",
-    icon: `${BASE}/icons/italy.png`,
+    icon: `${BASE}icons/italy.png`,
   },
 ];
 

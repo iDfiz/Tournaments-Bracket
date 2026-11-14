@@ -52,7 +52,7 @@ export default function Menu() {
       <nav>
         <input typeof='checkbox' id="check"/>
         <button className="checkbtn" onClick={toggleMenu}>
-          <img src={`${BASE}/icons/bars-solid.png`} alt="menu" />
+          <img src={`${BASE}icons/bars-solid.png`} alt="menu" />
         </button>
         <label className="logo">
             <img 

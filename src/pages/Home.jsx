@@ -303,13 +303,13 @@ export default function Home() {
               <div className="icons">
                   <div className="steck">
                     <div className="back-img-steck">
-                      <img src={`${BASE}/icons/react.png`} alt="" />
+                      <img src={`${BASE}icons/react.png`} alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src={`${BASE}/icons/js.png`} alt="" />
+                      <img src={`${BASE}icons/js.png`} alt="" />
                     </div>
                     <div className="back-img-steck">
-                      <img src={`${BASE}/icons/ts.png`} alt="" />
+                      <img src={`${BASE}icons/ts.png`} alt="" />
                     </div>
                   </div>
                   <div className="link">
